@@ -13,11 +13,11 @@ for i in range(5):
     axes[i].set_title(f"Label : {label}")
 plt.show()
 
-# image,label=train_dataset[0]
-# print(f"label : {label}")
-# print(f"Image Shape : {image.shape}")
-# print("Image Values :")
-# print(image)
+image,label=train_dataset[0]
+print(f"label : {label}")
+print(f"Image Shape : {image.shape}")
+print("Image Values :")
+print(image)
 
 
 import tensorflow as tf
