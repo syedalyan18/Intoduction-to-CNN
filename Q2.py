@@ -63,3 +63,26 @@ avg_pooled_torch=avg_pool(input_torch)
 print(f"Max Pooled Torch : \n {tf.squeeze(max_pooled_torch).numpy()}")
 print(f"Avg Pooled Torch : \n {tf.squeeze(avg_pooled_torch).numpy()}")
 
+
+model_tf=tf.keras.Sequential([
+    tf.keras.Input(shape=(32,32,3)),
+    tf.keras.layers.Conv2D(32,(3,3),activation="relu"),
+    tf.keras.layers.MaxPooling2D((2,2)),
+    tf.keras.layers.Conv2D(64,(3,3),activation="relu"),
+    tf.keras.layers.AveragePooling2D((2,2))
+])
+
+class SimpleCNN(torch.nn.Module):
+    def __init__(self):
+        super(SimpleCNN,self).__init__()
+        self.conv1=nn.Conv2d((3,32),kernel_size=3)
+        self.pool1=nn.MaxPool2d(2,2)
+        self.conv2=nn.Conv2d((32,64),kernel_size=3)
+        self.pool2=nn.MaxPool2d(2,2)
+
+    def forward(self,x):
+        x=torch.relu(self.conv1(x))
+        x=self.pool1(x)
+        x=torch.relu(self.conv2(x))
+        x=self.pool2(x)
+        return x
