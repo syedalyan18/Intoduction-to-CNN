@@ -41,3 +41,25 @@ avg__pooled_tensor=avg_pool(input_tensor)
 
 print(f"Max Pooled Tensor : \n {tf.squeeze(max_pooled_tensor).numpy()}")
 print(f"Avg Pooled Tensor : \n {tf.squeeze(avg__pooled_tensor).numpy()}")
+
+
+import torch
+import torch.nn as nn
+
+input_torch=torch.tensor(feature_map,dtype=torch.float32).unsqueeze(0).unsqueeze(0)
+
+
+max_pool=nn.MaxPool2d(kernel_size=2,stride=2)
+
+max_pooled_torch=max_pool(input_torch)
+
+
+
+avg_pool=nn.AvgPool2d(kernel_size=2,stride=2)
+
+avg_pooled_torch=avg_pool(input_torch)
+
+
+print(f"Max Pooled Torch : \n {tf.squeeze(max_pooled_torch).numpy()}")
+print(f"Avg Pooled Torch : \n {tf.squeeze(avg_pooled_torch).numpy()}")
+
