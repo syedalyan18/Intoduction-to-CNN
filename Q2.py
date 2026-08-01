@@ -24,9 +24,9 @@ feature_map=np.array([
 # plt.show()
 
 
-import tensorflow as tf
+# import tensorflow as tf
 
-input_tensor=tf.constant(feature_map.reshape(1,4,4,1),dtype=tf.float32)
+# input_tensor=tf.constant(feature_map.reshape(1,4,4,1),dtype=tf.float32)
 
 max_pool=tf.keras.layers.MaxPooling2D(pool_size=(2,2),strides=2,padding='valid')
 
