@@ -81,7 +81,7 @@ plt.show()
 
 
 plt.plot(history.history['loss'],label="Training loss")
-# plt.plot(history.history['val_loss'],label="Validation loss")
+plt.plot(history.history['val_loss'],label="Validation loss")
 # plt.xlabel("Epochs")
 # plt.ylabel("Loss")
 # plt.title("Training and Validation Loss")
